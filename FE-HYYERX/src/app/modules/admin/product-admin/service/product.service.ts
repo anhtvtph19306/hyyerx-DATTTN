@@ -1,0 +1,21 @@
+import { confisAxios } from "~/app/api/config-http"
+
+export const getAllProduct = async () => {
+    return await confisAxios.get("/product")
+}
+
+export const createProduct = async (data: any) => {
+    return await confisAxios.post("/product/add", data)
+}
+
+export const removeProduct = async (id: any) => {
+    return await confisAxios.delete(`/product/delete/${id}`)
+}
+
+export const updateProduct = async (id: any, bodyRequest: any) => {
+    return await confisAxios.put(`/product/update/${id}`, bodyRequest)
+}
+
+export const searchProduct = async (keyword: any) => {
+    return await confisAxios.get(`/product/search?name=${keyword}`)
+}
